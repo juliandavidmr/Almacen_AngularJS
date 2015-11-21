@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="control-label col-sm-2">Categoria:</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input type="text" class="form-control" name="Categoria" ng-model="new">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Añadir" ng-click="add()">
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Categorias</h2>
+    <p class="input-group" ng-repeat="c in lista">
+      <input type="text" ng-model="c" ng-value="c" class="form-control">
+      <span class="input-group-btn">
+      <button class="btn btn-danger" ng-click="delete($index)" aria-label="Eliminar">X</button>             
+    </span>
+    </p>
+  </div>
+</div>
