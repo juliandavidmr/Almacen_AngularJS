@@ -1,1 +1,23 @@
-<p>This is the login view.</p>
+<div class="container">
+  <div class="form-horizontal" role="form">
+    <h2>Iniciar sesión</h2>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Email</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="credencial.email">
+        </div>
+      </div>
+      <br>
+      <label class="control-label col-sm-2">Contraseña</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="credencial.contrasenia">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Añadir" ng-click="login()">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
