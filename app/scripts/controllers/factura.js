@@ -8,7 +8,8 @@
  * Controller of the frutasApp
  */
 angular.module('frutasApp')
-    .controller('FacturaCtrl', function ($scope) {
+    .controller('FacturaCtrl', function ($scope, $http) {
+        var url_getProductos = 'http://localhost:3000/productos';
 
         $scope.empleados = [
             { id: 1, nombres: 'Julian', apellidos: 'Mora Ramos', correo: 'anlijudavid@gmail.com', direccion: 'florencia', celular: '3144774531' },
@@ -21,10 +22,6 @@ angular.module('frutasApp')
         $scope.productos_seleccionados_datos = [];
 
         $scope.total = 0;
-
-        $scope.productos = [
-            { id: 1, nombre: 'Naranja', medida: '10m', precio: 2000, cantidad: 0 },
-            { id: 1, nombre: 'Pera', medida: '30m', precio: 1200, cantidad: 0 }];
 
         $scope.addProducto = function () {
             $scope.productos_seleccionados_datos.push($scope.factura.producto_select);
@@ -44,5 +41,21 @@ angular.module('frutasApp')
             }, this);
             console.log($scope.total);
             alert($scope.total);
-        };           
+        };
+
+        $scope.getAllProductos = function () {
+            $http.get(url_getProductos).success(function (data) {
+                //alert(data);
+                $scope.productos = [];
+                data.forEach(function (d) {
+                    $scope.productos.push(d);
+                }, this);
+            });
+        }
+
+        $scope.init = function () {
+            $scope.getAllProductos();
+        }
+
+
     });

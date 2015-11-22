@@ -86,6 +86,21 @@ angular
         controller: 'ListapreciosCtrl',
         controllerAs: 'listaPrecios'
       })
+      .when('/empleado', {
+        templateUrl: 'views/empleado.html',
+        controller: 'EmpleadoCtrl',
+        controllerAs: 'empleado'
+      })
+      .when('/persona', {
+        templateUrl: 'views/persona.html',
+        controller: 'PersonaCtrl',
+        controllerAs: 'persona'
+      })
+      .when('/persona', {
+        templateUrl: 'views/persona.html',
+        controller: 'PersonaCtrl',
+        controllerAs: 'persona'
+      })
       .otherwise({
         redirectTo: '/'
       });
