@@ -27,6 +27,14 @@
     <span class="input-group-btn">
       <input type="submit" class="btn btn-block" value="Añadir" ng-click="add()">
     </span>
-
+    <h2>Empleados</h2>
+    <div ng-init="getAllEmpleados()">
+      <p class="input-group" ng-repeat="e in empleados">
+        <input type="text" ng-model="e" ng-value="{{e.Nombre}}" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="delete($index)" aria-label="Eliminar">X</button>             
+        </span>
+      </p>
+    </div>
   </div>
 </div>

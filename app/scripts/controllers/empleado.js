@@ -19,7 +19,7 @@ angular.module('frutasApp')
     //:Nombre1/:Nombre2/:Apellido1/:Apellido2/:Direccion/:Celular/:Correo/:fk_idGenero    
     $scope.add = function () {
       var s = '/';
-      var inf = $scope.persona.Nombre1 + s + $scope.persona.Nombre2 + s + $scope.persona.Apellido1 + s + $scope.persona.Apellido2 + s + $scope.persona.Direccion + s + $scope.persona.Celular + s + $scope.persona.Correo + s + $scope.persona.fk_idPersona;
+      var inf = $scope.empleado.fk_idPersona + s + $scope.empleado.fk_idRol + s + $scope.empleado.fk_idSucursal;
       //alert("Ingresando cliente\n" + inf);
       $http({
         method: 'POST',
