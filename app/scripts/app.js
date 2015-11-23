@@ -101,6 +101,11 @@ angular
         controller: 'PersonaCtrl',
         controllerAs: 'persona'
       })
+      .when('/proveedor', {
+        templateUrl: 'views/proveedor.html',
+        controller: 'ProveedorCtrl',
+        controllerAs: 'proveedor'
+      })
       .otherwise({
         redirectTo: '/'
       });
