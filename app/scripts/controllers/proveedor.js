@@ -14,7 +14,7 @@ angular.module('frutasApp')
 
     $scope.lista = [];
 
-    //Nombre/:Ciudad/:Direccion/:Correo/:Telefono1/:Telefono2     
+    //Nombre/:Ciudad/:Direccion/:Correo/:Telefono1/:Telefono2  
     $scope.add = function () {
       var s = '/';
       var inf = $scope.proveedor.Nombre + s + $scope.proveedor.Ciudad + s + $scope.proveedor.Direccion + s + $scope.proveedor.Correo + s + $scope.proveedor.Telefono1 + s + $scope.proveedor.Telefono2;
@@ -42,6 +42,10 @@ angular.module('frutasApp')
           $scope.proveedores.push(d);
         }, this);
       });
+    }
+    
+    $scope.init = function () {
+      $scope.getAllProveedores();
     }
 
     $scope.delete = function (index) {
